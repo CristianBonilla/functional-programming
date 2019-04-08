@@ -44,3 +44,5 @@ BiFunction<String, Integer, Boolean> exceedsMaxLength = (s, maxLength) -> {
 ### Patrón de estrategia (Strategy)
 
 Si volvemos al modo orientado a objetos y el parámetro de constructor como un objeto, estamos pasando un objeto que sabe cómo realizar un cálculo. Este es un patrón de diseño OO documentado. El patrón de estrategia es una pieza muy pequeña de programación funcional, Dado que una estrategia realiza un cálculo y no accede ni actualiza el mundo exterior, sus datos ingresan. Es un patrón funcional. Con java 8 el patrón de estrategia es mucho menos dificultoso, antes se tenia que usar clases internas anónimas. Las expresiones lambda son más cortas y eficientes, ni siquiera es necesario crear una interfaz funcional para pasarla, se puede usar la función estándar provista en java 8.
+
+![Alt text](/functionalPattern.png?raw=true "Strategy Pattern")
