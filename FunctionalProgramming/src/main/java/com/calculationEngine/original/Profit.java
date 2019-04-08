@@ -1,15 +1,15 @@
-package com.calculationEngine.objectOriented;
+package com.calculationEngine.original;
 
 // projected profit
 public class Profit implements QuantityOfInterest {
   private final Sales sales;
-  private final IncrementalCosts incrementalCosts;
   private final FixedCosts fixedCosts;
+  private final IncrementalCosts incrementalCosts;
   
   public Profit(
-      final Sales sales, 
-      final IncrementalCosts incrementalCosts,
-      final FixedCosts fixedCosts) {
+      final Sales sales,
+      final FixedCosts fixedCosts,
+      final IncrementalCosts incrementalCosts) {
     this.sales = sales;
     this.incrementalCosts = incrementalCosts;
     this.fixedCosts = fixedCosts;
@@ -21,7 +21,7 @@ public class Profit implements QuantityOfInterest {
 
   @Override
   public double valueAt(int time) {
-    return sales.valueAt(time) - (incrementalCosts.valueAt(time) + 
-        fixedCosts.valueAt(time));
+    return sales.valueAt(time) - (fixedCosts.valueAt(time) + 
+        incrementalCosts.valueAt(time));
   }
 }

@@ -1,4 +1,4 @@
-package com.calculationEngine.objectOriented;
+package com.calculationEngine.original;
 
 public class CalculationEngine {
   final static double[] EXPECTED_SALES_JAN_TO_DEC = new double[] {
@@ -24,8 +24,8 @@ public class CalculationEngine {
     
     final Profit profit = new Profit(
         sales,
-        incrementalCosts,
-        fixedCosts
+        fixedCosts,
+        incrementalCosts
     );
     
     double total = 0.0;

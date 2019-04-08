@@ -1,4 +1,4 @@
-package com.calculationEngine.objectOriented;
+package com.calculationEngine.original;
 
 public abstract class MonthByMonthQuantity implements QuantityOfInterest {
   private final double[] values;

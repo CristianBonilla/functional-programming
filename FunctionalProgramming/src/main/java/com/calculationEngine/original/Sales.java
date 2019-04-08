@@ -1,4 +1,4 @@
-package com.calculationEngine.objectOriented;
+package com.calculationEngine.original;
 
 public class Sales extends MonthByMonthQuantity {
   public Sales(final double[] values) {

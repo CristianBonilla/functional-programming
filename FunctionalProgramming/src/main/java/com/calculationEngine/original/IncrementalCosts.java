@@ -1,4 +1,4 @@
-package com.calculationEngine.objectOriented;
+package com.calculationEngine.original;
 
 public class IncrementalCosts extends PolynomialQuantity {
   public IncrementalCosts(
