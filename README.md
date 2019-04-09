@@ -75,7 +75,7 @@ final Double profit = timed("Profit calculation",
 
 En java estamos acostumbrados a usar la iteración externa, pero un estilo funcional seria la iteración interna. En la librería Guava con java 6 se logra con funciones de iterables o con fluidez, por lo que podemos encadenar las llamadas, por operaciones internas como filtro, transformación o de unión, para ser combinadas en una sola iteración y devolver un solo valor. En java 8 la funcionalidad de fluidez iterable es proporcionada por stream, en la nueva biblioteca de colecciones, una lista puede proporcionarnos una secuencia y la secuencia proporciona los métodos de iteración internos que deseamos.
 
-**Libreria Guava** | **Java 8**
+**Librería Guava** | **Java 8**
 --- | --- |
 `FluentIterable` | `Stream`
 *filter* | *filter*
