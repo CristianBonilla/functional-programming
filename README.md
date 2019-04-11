@@ -81,3 +81,48 @@ En java estamos acostumbrados a usar la iteración externa, pero un estilo funci
 *filter* | *filter*
 *transform* | *map*
 *Joiner* | *reduce*
+
+### Streams
+
+Los streams pueden ser perezosos (LazyLoading) o paralelos. Hay diferentes tipos de métodos a los que puede recurrir y las consecuencias que tienen esos métodos. Pueden hacer cálculos en datos que estén dentro de una secuencia. Un flujo es un contexto para operar con datos. El poder de la programación funcional y el procesamiento de secuencias para permitir que el programa procese los datos que no caben en la memoria.
+
+```java
+Stream<String> descriptions = Arrays.asList(descriptions)
+  .stream()
+  .filter(description -> !descriptions.isEmpty())
+  .reduce((a, n) -> a + " & " + n);
+```
+
+* **Operadores de terminal:** Son aquellos operadores que se activan cuando el procesamiento de la secuencia debe realizarse.
+
+```java
+long count = Arrays.asList(descriptions)
+  .stream()
+  .count();
+
+boolean total = Arrays.asList(descriptions)
+  .stream()
+  .anyMatch(total -> total > 100.00);
+```
+
+* **Operadores intermedios:** Cuando se invocan en una secuencia, devuelven una secuencia a la que podemos continuar llamando.
+
+```java
+Supplier<Stream<Item>> itemStream = () -> sales.stream()
+    .flatMap(sale -> sale.items.stream());
+
+long itemCount = itemStream.get().count();
+```
+
+### Optional
+
+El contexto es más eficaz que el nulo porque no tenemos que ir a cavar, podemos dejar que la opción haga la comprobación nula cada vez que queramos llamar a una función en el valor interno y eso se envía como un contexto opcional como una cuerda.
+
+```java
+String itemName = "carrot";
+
+Optional<Sale> findSaleOf = sales.stream()
+  .filter(sale -> sale.items.stream()
+    .anyMatch(item -> item.identity.equals(itemName)))
+  .findFirst();
+```
